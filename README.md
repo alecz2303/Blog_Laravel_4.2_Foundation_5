@@ -6,9 +6,6 @@ Usin Foundation 5... This Repo is based completely in <a href="https://github.co
 
 You can see a demo page <a href="http://kerberosits.mooo.com:82/laravel/public/">HERE</a>
 
-user: admin
-pass: admin
-
 user: user
 pass: user
 
