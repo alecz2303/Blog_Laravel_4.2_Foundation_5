@@ -47,7 +47,7 @@
 		    } );
 
 			table = $('#comments').DataTable({
-				"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+				"sDom": "<'row'<'medium-6 columns'l><'medium-6 columns'f>r>t<'row'<'medium-6 columns'i><'medium-6 columns'p>>",
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"
 				},

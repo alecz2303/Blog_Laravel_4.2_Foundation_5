@@ -122,7 +122,7 @@
     <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
     <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-    <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
+    <script src="//cdn.datatables.net/plug-ins/a5734b29083/integration/foundation/dataTables.foundation.js"></script>
     <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
     <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
     <script src="{{asset('assets/js/prettify.js')}}"></script>
@@ -131,7 +131,7 @@
  <script type="text/javascript">
 $(document).ready(function(){
 $('.close_popup').click(function(){
-parent.oTable.fnReloadAjax();
+parent.table.ajax.reload();
 parent.jQuery.fn.colorbox.close();
 return false;
 });
@@ -143,7 +143,7 @@ url: form.attr('action'),
 data: form.serialize()
 }).done(function() {
 parent.jQuery.colorbox.close();
-parent.oTable.fnReloadAjax();
+parent.table.ajax.reload();
 }).fail(function() {
 });
 event.preventDefault();

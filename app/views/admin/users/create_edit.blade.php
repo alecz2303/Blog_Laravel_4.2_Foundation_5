@@ -2,11 +2,6 @@
 
 {{-- Content --}}
 @section('content')
-	<!-- Tabs -->
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#tab-general" data-toggle="tab">General</a></li>
-		</ul>
-	<!-- ./ tabs -->
 
 	{{-- Create User Form --}}
 	<form class="form-horizontal" method="post" action="@if (isset($user)){{ URL::to('admin/users/' . $user->id . '/edit') }}@endif" autocomplete="off">
@@ -14,18 +9,18 @@
 		<input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 		<!-- ./ csrf token -->
 
+		<!-- Tabs -->
+		<dl class="tabs" data-tab> 
+			<dd class="active"><a href="#panel1">General</a></dd> 
+		</dl> 
+
 		<!-- Tabs Content -->
-		<div class="tab-content">
+		<div class="tabs-content">
 			<!-- General tab -->
-			<div class="tab-pane active" id="tab-general">
+			<div class="content active" id="panel1">
 				<!-- username -->
-				<div class="form-group {{{ $errors->has('username') ? 'error' : '' }}}">
-					<label class="col-md-2 control-label" for="username">Username</label>
-					<div class="col-md-10">
-						<input class="form-control" type="text" name="username" id="username" value="{{{ Input::old('username', isset($user) ? $user->username : null) }}}" />
-						{{ $errors->first('username', '<span class="help-inline">:message</span>') }}
-					</div>
-				</div>
+				<label class="col-md-2 control-label" for="username">Username</label>
+				<input class="form-control" type="text" name="username" id="username" value="{{{ Input::old('username', isset($user) ? $user->username : null) }}}" />
 				<!-- ./ username -->
 
 				<!-- Email -->

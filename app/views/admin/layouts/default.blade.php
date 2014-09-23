@@ -52,17 +52,18 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/prettify.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/bootstrap-wysihtml5.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
 
     <!-- DataTables CSS -->
-	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/a5734b29083/integration/foundation/dataTables.foundation.css">
 	  
 	<!-- jQuery -->
-	<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	  
 	<!-- DataTables -->
-	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/a5734b29083/sorting/num-html.js"></script>
 
 
 	@yield('styles')
@@ -160,7 +161,7 @@
     <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
     <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
     <script src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-    <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
+    <script src="https://cdn.datatables.net/plug-ins/a5734b29083/integration/foundation/dataTables.foundation.js"></script>
     <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
     <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
     <script src="{{asset('assets/js/prettify.js')}}"></script>

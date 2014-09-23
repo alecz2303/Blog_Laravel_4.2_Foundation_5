@@ -58,7 +58,6 @@
 		    } );
 
 			table = $('#users2').DataTable({
-				"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"
 				},
