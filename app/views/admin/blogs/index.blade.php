@@ -30,6 +30,14 @@
 				<th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
 			</tr>
 		</thead>
+		<tfoot>
+			<tr>
+				<th class="col-md-4">{{{ Lang::get('admin/blogs/table.title') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('admin/blogs/table.comments') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('admin/blogs/table.created_at') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
+			</tr>
+		</tfoot>
 		<tbody>
 		</tbody>
 	</table>
@@ -38,13 +46,18 @@
 {{-- Scripts --}}
 @section('scripts')
 	<script type="text/javascript">
-		var oTable;
+		var table;
 		$(document).ready(function() {
-			oTable = $('#blogs').dataTable( {
+			// Setup - add a text input to each footer cell
+		    $('#blogs tfoot th').each( function () {
+		        var title = $('#blogs thead th').eq( $(this).index() ).text();
+		        $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
+		    } );
+
+			table = $('#blogs').DataTable({
 				"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-				"sPaginationType": "bootstrap",
 				"oLanguage": {
-					"sLengthMenu": "_MENU_ registros por pagina"
+					"sLengthMenu": "_MENU_ records per page"
 				},
 				"bProcessing": true,
 		        "bServerSide": true,
@@ -53,6 +66,16 @@
 	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
 	     		}
 			});
+
+			// Apply the search
+		    table.columns().eq( 0 ).each( function ( colIdx ) {
+		        $( 'input', table.column( colIdx ).footer() ).on( 'keyup change', function () {
+		            table
+		                .column( colIdx )
+		                .search( this.value )
+		                .draw();
+		        } );
+		    } );
 		});
 	</script>
 @stop

@@ -12,12 +12,12 @@
 			{{{ $title }}}
 
 			<div class="pull-right">
-				<a href="{{{ URL::to('admin/users/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
+				<a href="{{{ URL::to('admin/users/create') }}}" class="button small iframe"><span class="fa fa-plus"></span> Create</a>
 			</div>
 		</h3>
 	</div>
 
-	<table id="users" class="table table-striped table-hover">
+	<table id="users2" class="table table-striped table-hover">
 		<thead>
 			<tr>
 				<th class="col-md-2">{{{ Lang::get('admin/users/table.username') }}}</th>
@@ -28,19 +28,37 @@
 				<th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
 			</tr>
 		</thead>
+		<tfoot>
+			<tr>
+				<th class="col-md-2">{{{ Lang::get('admin/users/table.username') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('admin/users/table.email') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('admin/users/table.roles') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('admin/users/table.activated') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('admin/users/table.created_at') }}}</th>
+				<th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
+			</tr>
+		</tfoot>
 		<tbody>
 		</tbody>
 	</table>
+
 @stop
 
 {{-- Scripts --}}
 @section('scripts')
 	<script type="text/javascript">
-		var oTable;
+		var table;
 		$(document).ready(function() {
-				oTable = $('#users').dataTable( {
+				
+
+			// Setup - add a text input to each footer cell
+		    $('#users2 tfoot th').each( function () {
+		        var title = $('#users2 thead th').eq( $(this).index() ).text();
+		        $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
+		    } );
+
+			table = $('#users2').DataTable({
 				"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-				"sPaginationType": "bootstrap",
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"
 				},
@@ -51,6 +69,16 @@
 	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
 	     		}
 			});
+
+			// Apply the search
+		    table.columns().eq( 0 ).each( function ( colIdx ) {
+		        $( 'input', table.column( colIdx ).footer() ).on( 'keyup change', function () {
+		            table
+		                .column( colIdx )
+		                .search( this.value )
+		                .draw();
+		        } );
+		    } );
 		});
 	</script>
 @stop
