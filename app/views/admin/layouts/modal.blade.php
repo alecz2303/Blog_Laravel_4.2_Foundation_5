@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="{{asset('foundation/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('foundation/css/foundation.min.css')}}">
     <script src="{{asset('foundation/js/vendor/modernizr.js')}}"></script>
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/1.0.1/css/dataTables.responsive.css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/prettify.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/bootstrap-wysihtml5.css')}}">

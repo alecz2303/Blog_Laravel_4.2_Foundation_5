@@ -48,9 +48,7 @@
 	<script type="text/javascript">
 		var table;
 		$(document).ready(function() {
-			columnDefs: [
-		       { type: 'num-html', targets: 0 }
-		     ]
+			
 			// Setup - add a text input to each footer cell
 		    $('#blogs tfoot th').each( function () {
 		        var title = $('#blogs thead th').eq( $(this).index() ).text();
@@ -58,6 +56,7 @@
 		    } );
 
 			table = $('#blogs').DataTable({
+				responsive: true,
 				"sDom": "<'row'<'medium-6 columns'l><'medium-6 columns'f>r>t<'row'<'medium-6 columns'i><'medium-6 columns'p>>",
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"

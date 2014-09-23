@@ -162,6 +162,8 @@
     <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
     <script src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/a5734b29083/integration/foundation/dataTables.foundation.js"></script>
+    <script src="//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
+
     <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
     <script src="{{asset('assets/js/prettify.js')}}"></script>
 

@@ -58,6 +58,7 @@
 		    } );
 
 			table = $('#users2').DataTable({
+				responsive: true,
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"
 				},

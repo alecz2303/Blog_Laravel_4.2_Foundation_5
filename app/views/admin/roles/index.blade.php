@@ -51,6 +51,7 @@
 		    } );
 
 			table = $('#roles').DataTable({
+				responsive: true,
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"
 				},
