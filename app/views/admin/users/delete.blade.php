@@ -2,11 +2,6 @@
 
 {{-- Content --}}
 @section('content')
-    <!-- Tabs -->
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab-general" data-toggle="tab">General</a></li>
-        </ul>
-    <!-- ./ tabs -->
 
     {{-- Delete User Form --}}
     <form id="deleteForm" class="form-horizontal" method="post" action="@if (isset($user)){{ URL::to('admin/users/' . $user->id . '/delete') }}@endif" autocomplete="off">
@@ -16,12 +11,8 @@
         <!-- ./ csrf token -->
 
         <!-- Form Actions -->
-        <div class="form-group">
-            <div class="controls">
-                <element class="btn-cancel close_popup">Cancel</element>
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-        </div>
+                <element class="button close_popup">Cancel</element>
+                <button type="submit" class="button alert">Delete</button>
         <!-- ./ form actions -->
     </form>
 @stop
