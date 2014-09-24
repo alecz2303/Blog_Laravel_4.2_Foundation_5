@@ -17,7 +17,7 @@
 		</h3>
 	</div>
 
-	<table id="roles" class="table table-striped table-hover">
+	<table id="roles" class="responsive">
 		<thead>
 			<tr>
 				<th class="col-md-6">{{{ Lang::get('admin/roles/table.name') }}}</th>

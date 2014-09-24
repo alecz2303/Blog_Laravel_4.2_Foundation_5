@@ -21,7 +21,7 @@
 		</h3>
 	</div>
 
-	<table id="blogs" class="table table-striped table-hover">
+	<table id="blogs" class="responsive">
 		<thead>
 			<tr>
 				<th class="col-md-4">{{{ Lang::get('admin/blogs/table.title') }}}</th>
