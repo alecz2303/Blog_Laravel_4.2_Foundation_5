@@ -2,12 +2,13 @@
 	width: 80%;
 	margin: auto;
 	margin-top: 20px;
-	background-color: #DDDDDD; 
 	padding: 60px;
 	margin-bottom: 20px;
 	border: solid 1px;
 	border-radius: 10px;
-	box-shadow: ;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 

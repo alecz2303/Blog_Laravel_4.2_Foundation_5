@@ -4,12 +4,12 @@
 @section('content')
 
     <!-- Tabs -->
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab-general" data-toggle="tab">General</a></li>
-        </ul>
+        <dl class="tabs" data-tab>
+            <dd class="active"><a href="#general">General</a></dd>
+        </dl>
     <!-- ./ tabs -->
     {{-- Delete Post Form --}}
-    <form id="deleteForm" class="form-horizontal" method="post" action="@if (isset($role)){{ URL::to('admin/roles/' . $role->id . '/delete') }}@endif" autocomplete="off">
+    <form id="deleteForm" method="post" action="@if (isset($role)){{ URL::to('admin/roles/' . $role->id . '/delete') }}@endif" autocomplete="off">
         
         <!-- CSRF Token -->
         <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
@@ -21,8 +21,8 @@
         <div class="form-group">
             <div class="controls">
                 Delete Role
-                <element class="btn-cancel close_popup">Cancel</element>
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <element class="button secondary close_popup">Cancel</element>
+                <button type="submit" class="alert">Delete</button>
             </div>
         </div>
         <!-- ./ form actions -->
